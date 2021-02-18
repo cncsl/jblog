@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    driverClassName: org.h2.Driver
+    platform: h2
+    url: jdbc:h2:mem:jblog
+    data: classpath:data-dev.sql
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+---
+spring:
+  devtools:
+    add-properties: false
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql//localhost:3306/jblog?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username: jblog_dba
+    password: jblog_dba
+
+  jpa:
+    show-sql: false
+
+  redis:
+    username: jblog_dba
+    password: jblog_dba
+
+---
