@@ -19,6 +19,21 @@ spring:
       ddl-auto: create
     show-sql: true
 
+logging:
+  level:
+    root: info
+    io.github.cncsl: DEBUG
+
+jblog:
+  security:
+    authentication:
+      jwt:
+        # openssl rand -base64 64
+        base64-secret: 3w09/7F3FKm+A35TkTpBIUxZxyKnL4E025al90arJoJRP6OkoTg6trM+EvGNXav8eELXQ8IjmHdQ6JrX7Th4MQORug5sjwE4PkZyR92aOAUfAgQaiGx2N4QVyBHSbxFy
+        # 一天
+        token-validity-in-seconds: 86400
+        # 七天
+        token-validity-in-seconds-for-remember-me: 604800
 ---
 spring:
   devtools:
@@ -26,6 +41,7 @@ spring:
   config:
     activate:
       on-profile: prod
+
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -39,5 +55,20 @@ spring:
   redis:
     username: jblog_dba
     password: jblog_dba
+
+logging:
+  level:
+    root: info
+
+jblog:
+  security:
+    authentication:
+      jwt:
+        # openssl rand -base64 64
+        base64-secret: d92Ga4WQJD0pkqwQlPSqXQYpcyhCq0kH+jhrPa1Na8cU2VPGzIRDz3sL9DZuVxw6LCpRJF17R8+XKe1wvQUoPj9atM4mnzLgm47EURbqSbTob5EvfzstZwhOTNQjQLlj
+        # 一天
+        token-validity-in-seconds: 86400
+        # 七天
+        token-validity-in-seconds-for-remember-me: 604800
 
 ---

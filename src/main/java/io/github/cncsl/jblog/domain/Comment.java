@@ -10,13 +10,15 @@ import java.time.Instant;
 
 /**
  * 评论实体
+ *
+ * @author nullptr
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "comments")
+@Table(name = "comment")
 public class Comment implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,6 +30,9 @@ public class Comment implements Serializable {
     @Lob
     @Column(name = "content", nullable = false)
     private String content;
+
+    @ManyToOne
+    private Comment relayTo;
 
     @NotNull
     @Column(name = "created_date", nullable = false)

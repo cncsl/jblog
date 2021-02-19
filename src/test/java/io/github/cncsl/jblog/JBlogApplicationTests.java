@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Slf4j
 @SpringBootTest
-class DemoBlogApplicationTests {
+class JBlogApplicationTests {
 
     @Test
     void contextLoads() {

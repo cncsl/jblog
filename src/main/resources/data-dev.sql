@@ -200,6 +200,8 @@ Typora now supports [YAML Front Matter](http://jekyllrb.com/docs/frontmatter/). 
 
 Input `[toc]` and press the `Return` key. This will create a  “Table of Contents” section. The TOC extracts all headers from the document, and its contents are updated automatically as you add to the document.', '2021-02-18 20:55:15', '2021-02-18 20:55:16', 2);
 
-INSERT INTO comments (content, created_date, user_id, post_id) VALUES ('jblog 预计于二月底完成后端主要功能', '2021-02-18 21:01:11', 1, 1);
-INSERT INTO comments (content, created_date, user_id, post_id) VALUES ('欢迎 fork 和 PR', '2021-02-18 21:01:47', 1, 1);
-INSERT INTO comments (content, created_date, user_id, post_id) VALUES ('摘自 Typora 手册', '2021-02-18 21:02:06', 2, 3);
+INSERT INTO comment (content, relay_to_id, created_date, user_id, post_id) VALUES ('jblog 预计于二月底完成后端主要功能', null, '2021-02-18 21:01:11', 1, 1);
+INSERT INTO comment (content, relay_to_id, created_date, user_id, post_id) VALUES ('欢迎 fork 和 PR', null, '2021-02-18 21:01:47', 1, 1);
+INSERT INTO comment (content, relay_to_id, created_date, user_id, post_id) VALUES ('摘自 Typora 手册', null, '2021-02-18 21:02:06', 2, 3);
+INSERT INTO comment (content, relay_to_id, created_date, user_id, post_id) VALUES ('PR 时请确保新增代码和已有代码保持相同的风格', 2, '2021-02-19 09:12:31', 1, 1);
+INSERT INTO comment (content, relay_to_id, created_date, user_id, post_id) VALUES ('Typora 是一款跨平台的 markdown 编辑器', 3, '2021-02-19 09:13:13', 2, 3);

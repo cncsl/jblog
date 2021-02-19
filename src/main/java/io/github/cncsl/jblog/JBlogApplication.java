@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
 @SpringBootApplication
-public class DemoBlogApplication {
+public class JBlogApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoBlogApplication.class, args);
+        SpringApplication.run(JBlogApplication.class, args);
     }
 
 }

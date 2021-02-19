@@ -52,20 +52,25 @@ create table if not exists post
 )
     comment '文章表';
 
-create table if not exists comments
+create table if not exists comment
 (
     id           bigint auto_increment
         primary key,
     content      longtext not null comment '内容',
+    relay_to_id  bigint   null,
     created_date datetime not null comment '创建时间',
     user_id      bigint   null comment '用户ID',
     post_id      bigint   null comment '文章ID',
-    constraint fk_comments_post_id
+    constraint fk_comment_post_id
         foreign key (post_id) references post (id),
-    constraint fk_comments_user_id
+    constraint fk_comment_relay_to_id
+        foreign key (relay_to_id) references comment (id),
+    constraint fk_comment_user_id
         foreign key (user_id) references user (id)
 )
     comment '评论表';
+
+
 
 create table if not exists user_authority
 (
