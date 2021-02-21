@@ -1,4 +1,4 @@
-package io.github.cncsl.jblog.security.domain;
+package io.github.cncsl.jblog.security;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +18,7 @@ public class LoginVM {
     private String username;
 
     @NotNull
-    @Size(min = 4, max = 100)
+    @Size(min = 4, max = 20)
     private String password;
 
     private Boolean rememberMe;

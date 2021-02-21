@@ -1,4 +1,4 @@
-package io.github.cncsl.jblog.security.domain;
+package io.github.cncsl.jblog.service.dto;
 
 import io.github.cncsl.jblog.domain.Authority;
 import io.github.cncsl.jblog.domain.User;

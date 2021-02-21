@@ -1,5 +1,6 @@
-package io.github.cncsl.jblog.security.domain;
+package io.github.cncsl.jblog.web.vm;
 
+import io.github.cncsl.jblog.service.dto.UserDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;

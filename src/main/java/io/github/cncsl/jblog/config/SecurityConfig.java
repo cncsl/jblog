@@ -56,7 +56,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/account/reset-password/init").permitAll()
                 .antMatchers("/api/account/reset-password/finish").permitAll()
                 //未登陆也可以查看博客、文章、评论
-                .antMatchers(HttpMethod.GET, "/api/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/blogs", "/api/blogs/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/posts", "/api/posts/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/comments", "/api/comments/*").permitAll()
+                //其他都需要登陆
                 .antMatchers("/api/**").authenticated()
                 .and()
                 .apply(securityConfigurerAdapter());

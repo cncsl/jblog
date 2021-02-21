@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 博客表
@@ -34,8 +35,12 @@ public class Blog implements Serializable {
     @Column(name = "desc_info", length = 100)
     private String description;
 
-    @ManyToOne
+    @OneToOne
     @JsonIgnoreProperties(value = "blogs", allowSetters = true)
     private User user;
+
+    @JoinColumn(name = "blog_id")
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Post> posts;
 
 }

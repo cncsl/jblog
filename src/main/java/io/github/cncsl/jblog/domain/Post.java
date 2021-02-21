@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.List;
 
 /**
  * 文章实体类
@@ -49,5 +50,9 @@ public class Post implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties(value = "posts", allowSetters = true)
     private Blog blog;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "post_id")
+    private List<Comment> comments;
 
 }
